@@ -50,14 +50,13 @@ export const RegistrationSearch: React.FC<RegistrationSearchProps> = ({ isDarkMo
         .from('reciters')
         .select('*')
         .ilike('name', `%${searchTerm.trim()}%`)
-        .limit(1)
-        .single();
+        .limit(1);
 
-      if (error && error.code !== 'PGRST116') {
+      if (error) {
         console.error('Search error:', error);
         setSearchResult(null);
       } else {
-        setSearchResult(data || null);
+        setSearchResult(data && data.length > 0 ? data[0] : null);
       }
     } catch (error) {
       console.error('Search error:', error);

@@ -115,15 +115,14 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = ({ isDarkMode =
         .from('reciters')
         .select('*')
         .ilike('name', `%${searchTerm.trim()}%`)
-        .limit(1)
-        .single();
+        .limit(1);
 
-      if (error && error.code !== 'PGRST116') {
+      if (error) {
         console.error('Search error:', error);
         setSearchResult(null);
         setSearchError('حدث خطأ في البحث، يرجى المحاولة مرة أخرى');
       } else {
-        setSearchResult(data || null);
+        setSearchResult(data && data.length > 0 ? data[0] : null);
       }
     } catch (error) {
       console.error('Search error:', error);
