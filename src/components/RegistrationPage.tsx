@@ -12,7 +12,7 @@ const examSchedule = {
   "ثلاثة أجزاء": {
     date: "الجمعة، ٨ أغسطس ٢٠٢٥ م",
     hijriDate: "الجمعة، ٦ صفر ١٤٤٧ هـ",
-    time: "بعد صلاة الجمعة - ١:٣٠ ظهراً",
+    time: "بعد صلاة الجمعة - ٢:٠٠ ظهراً",
     location: "دار المناسبات الشرقيه - دمليج"
   },
   "خمسة أجزاء": {
@@ -30,19 +30,19 @@ const examSchedule = {
   "عشرة أجزاء": {
     date: "الجمعة، ١٥ أغسطس ٢٠٢٥ م",
     hijriDate: "الجمعة، ١٣ صفر ١٤٤٧ هـ",
-    time: "بعد صلاة الجمعة - ١:٣٠ ظهراً",
+    time: "بعد صلاة الجمعة - ٢:٠٠ ظهراً",
     location: "دار المناسبات الشرقيه - دمليج"
   },
   "خمسة عشر جزءا": {
     date: "الجمعة، ١٥ أغسطس ٢٠٢٥ م",
     hijriDate: "الجمعة، ١٣ صفر ١٤٤٧ هـ",
-    time: "بعد صلاة الجمعة - ١:٣٠ ظهراً",
+    time: "بعد صلاة الجمعة - ٢:٠٠ ظهراً",
     location: "دار المناسبات الشرقيه - دمليج"
   },
   "عشرون جزءا": {
     date: "الجمعة، ١٥ أغسطس ٢٠٢٥ م",
     hijriDate: "الجمعة، ١٣ صفر ١٤٤٧ هـ",
-    time: "بعد صلاة الجمعة - ١:٣٠ ظهراً",
+    time: "بعد صلاة الجمعة - ٢:٠٠ ظهراً",
     location: "دار المناسبات الشرقيه - دمليج"
   },
   "خمسة وعشرون جزءا": {
@@ -101,7 +101,7 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = ({ isDarkMode =
     }
     
     if (searchTerm.trim().length < 3) {
-      setSearchError('يجب أن يكون الاسم 3 أحرف على الأقل');
+      setSearchError('يجب إدخال الاسم الأول والثاني والثالث للطالب');
       return;
     }
 
@@ -195,7 +195,7 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = ({ isDarkMode =
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     onKeyPress={handleKeyPress}
-                    placeholder="ادخل اسم طالب القرآن للبحث (3 أحرف على الأقل)..."
+                    placeholder="ادخل الاسم الأول والثاني والثالث للطالب..."
                     className={`flex-1 px-6 py-4 text-right focus:outline-none text-lg transition-colors duration-300 ${
                       isDarkMode 
                         ? 'bg-gray-800 text-gray-100 placeholder-gray-400' 
@@ -459,9 +459,14 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = ({ isDarkMode =
                         <div className={`p-4 rounded-xl border transition-colors duration-300 ${
                           isDarkMode 
                             ? 'bg-gradient-to-r from-green-900/30 to-green-800/30 border-green-600/50' 
-                            : 'bg-gradient-to-r from-green-100 to-green-200 border-green-200'
-                        }`}>
-                          <Phone className={`w-8 h-8 mx-auto mb-2 animate-pulse ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
+                              <button
+                                onClick={() => window.scrollTo({ top: document.querySelector('.contact-section')?.offsetTop || 0, behavior: 'smooth' })}
+                                className="w-full"
+                              >
+                                <Phone className={`w-8 h-8 mx-auto mb-2 animate-pulse ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
+                                <h4 className={`font-bold mb-1 ${isDarkMode ? 'text-green-200' : 'text-green-800'}`}>التواصل المباشر</h4>
+                                <p className={`text-sm ${isDarkMode ? 'text-green-300' : 'text-green-700'}`}>اتصل بإدارة المسابقة</p>
+                              </button>
                           <h4 className={`font-bold mb-1 ${isDarkMode ? 'text-green-200' : 'text-green-800'}`}>التواصل المباشر</h4>
                           <p className={`text-sm ${isDarkMode ? 'text-green-300' : 'text-green-700'}`}>اتصل بإدارة المسابقة</p>
                         </div>

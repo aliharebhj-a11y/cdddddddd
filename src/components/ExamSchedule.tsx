@@ -68,7 +68,7 @@ export const ExamSchedule: React.FC<ExamScheduleProps> = ({
   const examEvents: ExamEvent[] = [
     {
       id: 1,
-      date: new Date("2025-08-08T13:30:00"), // Friday, August 8, 2025 after Jumu'ah prayer
+      date: new Date("2025-08-08T14:00:00"), // Friday, August 8, 2025 after Jumu'ah prayer
       day: "الجمعة",
       title: "اختبار حفظ ثلاثة أجزاء",
       description:
@@ -89,7 +89,7 @@ export const ExamSchedule: React.FC<ExamScheduleProps> = ({
     },
     {
       id: 3,
-      date: new Date("2025-08-15T13:30:00"), // Friday after Jumu'ah prayer
+      date: new Date("2025-08-15T14:00:00"), // Friday after Jumu'ah prayer
       day: "الجمعة",
       title: "اختبار الأجزاء المتقدمة",
       description: "اختبارات للجزء العاشر والخامس عشر والعشرون",
