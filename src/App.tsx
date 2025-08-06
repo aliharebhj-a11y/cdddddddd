@@ -13,6 +13,7 @@ import { AllResultsSection } from "./components/AllResultsSection";
 import { Footer } from "./components/Footer";
 import { FloatingDonationButton } from "./components/FloatingDonationButton";
 import { VisitorStats } from "./components/VisitorStats";
+import { RegistrationPage } from "./components/RegistrationPage";
 import { Clock, AlertCircle, BookOpen } from "lucide-react";
 import { rankedStudents } from "./data/students";
 import { calculateStats } from "./utils/contestStats";
